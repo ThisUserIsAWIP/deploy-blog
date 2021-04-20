@@ -6,7 +6,7 @@ import posttags from './posttags';
 import { MySQL_Res, db } from '../../utilities';
 import config from '../config';
 //connect to mysql
-export const Connection = mysql.createConnection(config.db);
+export const Connection = mysql.createPool(config.db);
 
 //Query function to interact w/ database
 export const Query = <T = any>(query: string, values?:Array<string | number>) => {
